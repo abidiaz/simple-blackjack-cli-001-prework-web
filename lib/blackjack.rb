@@ -45,16 +45,19 @@ def hit?(total)
    
   elsif input == 's'
    return total
+   #return input
 
- elsif input == 'exit'
-  
-
+ else
+  invalid_command
   end
 
 end
 
 def invalid_command
   # code invalid_command here
+  puts "Please enter a valid command."
+  get_user_input
+
 end
 
 #####################################################
@@ -65,7 +68,7 @@ def runner
   # code runner here
   welcome
   total = initial_round
-  until total > 21
+  until total > 21 # or until s is entered twice. (need condition for 's' entered 2x.)
     total = hit?(total)
     display_card_total(total) 
   end
